@@ -2,7 +2,7 @@ function doPost(e) {
   var data = JSON.parse(e.postData.getDataAsString());
   // event subscriptionsで必要なコード
   if(data.type == 'url_verification') {
-    return ContentService.createTextOutput(postData.challenge);
+    return ContentService.createTextOutput(data.challenge);
   } else if (data.event.channel_type == 'im') {
     return postMessage(data);
   }
